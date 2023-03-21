@@ -8,14 +8,16 @@ const Statistics =({good, neutral, bad}) => {
         <>
             <h2>Statistics</h2>
             {all ? (
-                <>
-                    <StatisticLine text="Good" value={good} />
-                    <StatisticLine text="Neutral" value={neutral} />
-                    <StatisticLine text="Bad" value={bad} />
-                    <StatisticLine text="All" value={all} />
-                    <StatisticLine text="Average" value={(good-bad)/all} />
-                    <StatisticLine text="Positive" value={`${(good/all)*100}%`} />
-                </>
+                <table>
+                    <tbody>
+                        <StatisticLine text="Good" value={good} />
+                        <StatisticLine text="Neutral" value={neutral} />
+                        <StatisticLine text="Bad" value={bad} />
+                        <StatisticLine text="All" value={all} />
+                        <StatisticLine text="Average" value={(good-bad)/all} />
+                        <StatisticLine text="Positive" value={`${(good/all)*100}%`} />
+                    </tbody>
+                </table>
             )
             :
             <p>No feedback given</p>
